@@ -1,5 +1,4 @@
-import React from 'react';
-import { Mail, Phone, Github, Linkedin, Globe, MapPin, Calendar, Award, Code, Briefcase, GraduationCap, Star, ExternalLink } from 'lucide-react';
+import { Mail, Phone, Github, Linkedin, Calendar, Award, Briefcase, GraduationCap, Star, ExternalLink } from 'lucide-react';
 
 function App() {
   const skills = [
@@ -18,7 +17,8 @@ function App() {
       title: '7 Days Weather App',
       tech: 'React, OpenWeatherMap API',
       description: '7-day forecast with live API and error handling',
-      icon: '🌤️'
+      icon: '🌤️',
+      liveUrl: 'https://7daysweatherforecas.netlify.app/'
     },
     {
       title: 'E-Commerce Site',
@@ -33,17 +33,31 @@ function App() {
       icon: '💼'
     },
     {
-      title: 'Resume Parser',
+      title: 'Resume Screening AI',
       tech: 'Python, Flask, spaCy',
-      description: 'NLP-based resume extractor',
-      icon: '📄'
+      description: 'AI-powered resume screening and candidate matching',
+      icon: '📄',
+      liveUrl: 'https://resume-screening-ai-j4rhptccmx5ppe4afwzpjy.streamlit.app/'
     }
   ];
 
   const certifications = [
-    'Full Stack Developer – CraveDigi',
-    'DSA in Java',
-    'Web Dev Course'
+    {
+      name: 'Full Stack Developer – CraveDigi',
+      url: 'https://drive.google.com/file/d/16HY8CYXtSTb9ACTjUuaHMg5H4Lbwwr9f/view?usp=drive_link'
+    },
+    {
+      name: 'Deloitte Australia Cyber Job Simulation on Forage - October 2025',
+      url: 'https://drive.google.com/file/d/1jF98AFUlWHj1b4NrTm_WrrqKcp-dbAx7/view?usp=sharing'
+    },
+    {
+      name: 'Cloud Security & Networking and Security Professional',
+      url: 'https://drive.google.com/drive/folders/1T75q6wfyIbk-KtaHXY-t2FZMyPHjKfTy?usp=sharing'
+    },
+    {
+      name: 'Mastering the Linux',
+      url: 'https://drive.google.com/file/d/1n6Hk9_RwxkqNXZSfQbfJPzDe2okbpnlR/view?usp=sharing'
+    }
   ];
 
   return (
@@ -77,7 +91,7 @@ function App() {
             Mahaboob Basha
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 font-light">
-            Aspiring Software Development Engineer
+            Aspiring AI/ML Engineer | Full-Stack Developer | Computer Science Undergraduate
           </p>
           
           {/* Contact Buttons */}
@@ -90,11 +104,11 @@ function App() {
               <Phone className="w-5 h-5 text-green-400 group-hover:text-green-300" />
               <span>WhatsApp</span>
             </a>
-            <a href="https://github.com/mehboob64" className="group flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+            <a href="#" className="group flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
               <Github className="w-5 h-5 text-gray-400 group-hover:text-gray-300" />
               <span>GitHub</span>
             </a>
-            <a href="https://www.linkedin.com/in/mahaboob-basha-3101942bb/" className="group flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
+            <a href="#" className="group flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
               <Linkedin className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
               <span>LinkedIn</span>
             </a>
@@ -109,9 +123,9 @@ function App() {
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-[1.02]">
               <p className="text-lg leading-relaxed text-gray-300">
-                Enthusiastic Computer Science undergraduate with practical experience in full-stack development using the MERN stack. 
-                Skilled in Java, Python, and JavaScript with a strong foundation in OOP, RESTful APIs, and agile methodologies. 
-                Proven ability to build scalable, user-focused applications through internships and self-driven projects.
+                Computer Science undergraduate focused on both AI/ML engineering and full-stack development, with hands-on experience building intelligent and scalable applications. 
+                Skilled in Python, Java, JavaScript, and the MERN stack, with practical exposure to data preprocessing, model training, and deployment using tools like scikit-learn and TensorFlow. 
+                Strong foundation in OOP, RESTful APIs, and problem-solving, with proven internship and project experience in delivering user-focused, data-driven solutions.
               </p>
             </div>
           </div>
@@ -123,11 +137,10 @@ function App() {
             Technical Skills
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {skills.map((skill, index) => (
+            {skills.map((skill) => (
               <div key={skill.name} className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-2xl hover:shadow-teal-500/20 transition-all duration-500 transform hover:scale-105 hover:rotate-1">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="font-semibold text-white group-hover:text-teal-300 transition-colors">{skill.name}</h3>
-                  <span className="text-sm text-gray-400">{skill.level}%</span>
                 </div>
                 <div className="w-full bg-gray-700 rounded-full h-2 mb-2">
                   <div 
@@ -147,7 +160,13 @@ function App() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
-              <div key={index} className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:scale-105 hover:-rotate-1">
+              <a
+                key={index}
+                href={project.liveUrl || '#'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl hover:shadow-purple-500/20 transition-all duration-500 transform hover:scale-105 hover:-rotate-1"
+              >
                 <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
                   {project.icon}
                 </div>
@@ -161,7 +180,7 @@ function App() {
                 <div className="mt-4">
                   <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-purple-400 transition-colors" />
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -172,34 +191,96 @@ function App() {
             Experience
           </h2>
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-[1.02]">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
-                    <Briefcase className="w-6 h-6 text-white" />
+            <div className="space-y-6">
+              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-[1.02]">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                      <Briefcase className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <div className="mb-2 flex flex-wrap items-center gap-3">
+                      <h3 className="text-xl font-bold text-white">Full Stack Intern</h3>
+                      <a
+                        href="https://drive.google.com/file/d/1iBfJ_ZjiAUIRP-rM2IyaNpV8Vru1xQ5-/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center rounded-full border border-blue-300/50 bg-blue-500/20 px-4 py-1.5 text-sm font-semibold text-blue-100 transition-all duration-300 hover:scale-105 hover:bg-blue-500/30 hover:text-white"
+                      >
+                        Certificate
+                      </a>
+                    </div>
+                    <p className="text-blue-400 font-medium mb-2">CraveDigi Advisors OPC Pvt Ltd</p>
+                    <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>Aug 2024 – Feb 2025</span>
+                    </p>
+                    <ul className="space-y-2 text-gray-300">
+                      <li className="flex items-start gap-2">
+                        <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                        <span>Developed 5+ scalable MERN stack features for production-ready web apps</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                        <span>Built REST APIs, integrated dynamic frontends using React</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                        <span>Refactored components to improve performance and reduced frontend bugs by 25%</span>
+                      </li>
+                    </ul>
                   </div>
                 </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-bold text-white mb-1">Full Stack Intern</h3>
-                  <p className="text-blue-400 font-medium mb-2">CraveDigi Advisors OPC Pvt Ltd</p>
-                  <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
-                    <Calendar className="w-4 h-4" />
-                    Aug 2024 – Feb 2025
-                  </p>
-                  <ul className="space-y-2 text-gray-300">
-                    <li className="flex items-start gap-2">
-                      <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
-                      <span>Developed 5+ scalable MERN stack features for production-ready web apps</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
-                      <span>Built REST APIs, integrated dynamic frontends using React</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
-                      <span>Refactored components to improve performance and reduced frontend bugs by 25%</span>
-                    </li>
-                  </ul>
+              </div>
+
+              <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl hover:shadow-blue-500/20 transition-all duration-500 transform hover:scale-[1.02]">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                      <Briefcase className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-grow">
+                    <div className="mb-2 flex flex-wrap items-center gap-3">
+                      <h3 className="text-xl font-bold text-white">Google AI-ML Virtual Internship</h3>
+                      <a
+                        href="https://drive.google.com/file/d/1dCD941ooxXK056ODjBlPbGKVjTxeCAiJ/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center rounded-full border border-blue-300/50 bg-blue-500/20 px-4 py-1.5 text-sm font-semibold text-blue-100 transition-all duration-300 hover:scale-105 hover:bg-blue-500/30 hover:text-white"
+                      >
+                        Certificate
+                      </a>
+                    </div>
+                    <p className="text-blue-400 font-medium mb-2">EduSkills Foundation, Google for Developers, AICTE</p>
+                    <p className="text-gray-400 text-sm mb-4 flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      <span>Jul 2025 – Sep 2025</span>
+                    </p>
+                    <ul className="space-y-2 text-gray-300">
+                      <li className="flex items-start gap-2">
+                        <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                        <span>Completed a hands-on virtual internship focused on Artificial Intelligence and Machine Learning, covering the complete ML workflow from data preprocessing to model deployment</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                        <span>Worked extensively with Python, NumPy, pandas, scikit-learn, TensorFlow, and Google Colab to build and evaluate machine learning models</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                        <span>Performed data cleaning, feature engineering, model training, hyperparameter tuning, and performance evaluation on real-world datasets</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                        <span>Gained practical experience through guided labs, coding assignments, and mini-projects involving predictive analytics and intelligent data-driven solutions</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <Star className="w-4 h-4 text-yellow-400 mt-1 flex-shrink-0" />
+                        <span>Developed understanding of ethical AI principles including fairness, transparency, reliability, and data privacy in machine learning systems</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -228,7 +309,7 @@ function App() {
                   </p>
                   <p className="text-gray-300">
                     <span className="font-semibold">CGPA:</span> 8.7 | 
-                    <span className="text-sm ml-2">Relevant Coursework: Data Structures, Algorithms, Operating Systems, DBMS</span>
+                    <span className="text-sm ml-2">Relevant Coursework: Data Structures, Machine Learning, Algorithms, Operating Systems, DBMS</span>
                   </p>
                 </div>
               </div>
@@ -246,7 +327,14 @@ function App() {
               <div key={index} className="group bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 shadow-2xl hover:shadow-orange-500/20 transition-all duration-500 transform hover:scale-105">
                 <div className="flex items-center gap-3">
                   <Award className="w-6 h-6 text-orange-400 group-hover:text-orange-300 transition-colors" />
-                  <span className="text-white group-hover:text-orange-100 transition-colors font-medium">{cert}</span>
+                  <a
+                    href={cert.url || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white group-hover:text-orange-100 transition-colors font-medium underline decoration-orange-300/60 underline-offset-4"
+                  >
+                    {cert.name}
+                  </a>
                 </div>
               </div>
             ))}
